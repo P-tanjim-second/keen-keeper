@@ -11,10 +11,14 @@ export const router = createBrowserRouter([
     path: '/',
     Component: MainLayout,
     children: [
-        {index: true, Component: Homepage},
-        {path: 'timeline', Component: Timeline},
-        {path: 'status', Component: Status},
-        {path: 'friend/:friendDetails', Component: FriendDetails}
+      {
+        index: true,
+        loader: () => ({friends: fetch("/FriendData/FriendData.json").then(res => res.json())}),
+        Component: Homepage
+      },
+      { path: 'timeline', Component: Timeline },
+      { path: 'status', Component: Status },
+      { path: 'friend/:friendDetails', Component: FriendDetails }
     ]
   }
 ])

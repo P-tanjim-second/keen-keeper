@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "picture": "https://api.dicebear.com/7.x/avataaars/svg?seed=john-doe",
+    "email": "john@example.com",
+    "days_since_contact": 12,
+    "status": "overdue",
+    "tags": ["college", "close friend"],
+    "bio": "Met in university. Love hiking together.",
+    "goal": 14,
+    "next_due_date": "2025-07-20"
+  },
+  {
+    "id": 2,
+    "name": "Sarah Chen",
+    "picture": "https://api.dicebear.com/7.x/avataaars/svg?seed=sarah-chen",
+    "email": "s.chen.design@webmail.com",
+    "days_since_contact": 45,
+    "status": "overdue",
+    "tags": ["professional", "mentor"],
+    "bio": "Former manager at TechFlow. Leading expert in UX strategy; helped me navigate my first promotion.",
+    "goal": 30,
+    "next_due_date": "2026-03-31"
+  },
+  {
+    "id": 3,
+    "name": "Marcus Thorne",
+    "picture": "https://api.dicebear.com/7.x/avataaars/svg?seed=marcus-thorne",
+    "email": "m.thorne88@provider.net",
+    "days_since_contact": 6,
+    "status": "almost due",
+    "tags": ["local", "gym"],
+    "bio": "Training partner for the upcoming marathon. Heavy focus on trail running and endurance nutrition.",
+    "goal": 7,
+    "next_due_date": "2026-04-16"
+  },
+  {
+    "id": 4,
+    "name": "Elena Rodriguez",
+    "picture": "https://api.dicebear.com/7.x/avataaars/svg?seed=elenataj",
+    "email": "elena.madrid.rod@globalmail.com",
+    "days_since_contact": 15,
+    "status": "on-track",
+    "tags": ["family", "international"],
+    "bio": "Cousin living in Madrid. Architect specializing in sustainable urban restoration. Loves jazz.",
+    "goal": 90,
+    "next_due_date": "2026-06-28"
+  },
+  {
+    "id": 5,
+    "name": "Dr. Aris Thorne",
+    "picture": "https://api.dicebear.com/7.x/avataaars/svg?seed=aristhorne",
+    "email": "a.thorne@university.edu",
+    "days_since_contact": 12,
+    "status": "on-track",
+    "tags": ["academic", "research"],
+    "bio": "Thesis advisor. Leading researcher in Computational Fluid Dynamics and sustainable engineering.",
+    "goal": 180,
+    "next_due_date": "2026-10-03"
+  },
+  {
+    "id": 6,
+    "name": "Jamie Vance",
+    "picture": "https://api.dicebear.com/7.x/avataaars/svg?seed=jamie-vance",
+    "email": "jamie.vance@studio.com",
+    "days_since_contact": 40,
+    "status": "overdue",
+    "tags": ["creative", "photography"],
+    "bio": "Freelance editor. Collaborates on high-resolution portrait retouching and cinematic lighting.",
+    "goal": 14,
+    "next_due_date": "2026-03-20"
+  },
+  {
+    "id": 7,
+    "name": "Li Wei",
+    "picture": "https://api.dicebear.com/7.x/avataaars/svg?seed=li-wei",
+    "email": "li.wei.dev@techcorp.com",
+    "days_since_contact": 28,
+    "status": "almost due",
+    "tags": ["tech", "networking"],
+    "bio": "Senior Frontend Developer specializing in React and Tailwind CSS. Met at the 2025 Tech Summit.",
+    "goal": 30,
+    "next_due_date": "2026-04-17"
+  },
+  {
+    "id": 8,
+    "name": "Sana Khan",
+    "picture": "https://api.dicebear.com/7.x/avataaars/svg?seed=sana",
+    "email": "sana.k@impact.org",
+    "days_since_contact": 10,
+    "status": "on-track",
+    "tags": ["community", "charity"],
+    "bio": "Organizer for regional clean water access platforms. Focuses on social entrepreneurship.",
+    "goal": 60,
+    "next_due_date": "2026-06-04"
+  },
+  {
+    "id": 9,
+    "name": "David Miller",
+    "picture": "https://api.dicebear.com/7.x/avataaars/svg?seed=david-miller",
+    "email": "dmiller@consulting.com",
+    "days_since_contact": 55,
+    "status": "overdue",
+    "tags": ["finance", "consultant"],
+    "bio": "Advisor for early-stage startups. Provides guidance on venture capital and equity structures.",
+    "goal": 30,
+    "next_due_date": "2026-03-01"
+  },
+  {
+    "id": 10,
+    "name": "Avery Brooks",
+    "picture": "https://api.dicebear.com/7.x/avataaars/svg?seed=averybrooks",
+    "email": "abrooks@fastmail.com",
+    "days_since_contact": 6,
+    "status": "almost due",
+    "tags": ["neighbor", "fitness"],
+    "bio": "Running partner and mechanical watch enthusiast. Often discusses horology and movement types.",
+    "goal": 7,
+    "next_due_date": "2026-04-16"
+  }
+]
