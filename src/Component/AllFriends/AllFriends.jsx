@@ -9,7 +9,7 @@ const AllFriends = ({ friends }) => {
             <h4 className='text-2xl font-bold'>Your Friends</h4>
 
 
-            <Suspense fallback={<h1>Loading...</h1>}>
+            <Suspense fallback={<FriendLoader></FriendLoader>}>
                 <Await resolve={friends}>
 
                     {
