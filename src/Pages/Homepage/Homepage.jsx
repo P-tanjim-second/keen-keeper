@@ -6,10 +6,9 @@ import { useLoaderData } from 'react-router';
 const Homepage = () => {
     const {friends} = useLoaderData()
 
-
     return (
         <div className='bg-[#f8fafc]'>
-            <Banner></Banner>
+            <Banner friends={friends}></Banner>
             <AllFriends friends={friends}></AllFriends>
         </div>
     );
