@@ -5,7 +5,7 @@ const Footer = () => {
         <div className='flex flex-col justify-center items-center text-center bg-[#244d3f] pt-20 px-3'>
             <div className='space-y-4 pb-15'>
                 <h1 className='font-bold text-white text-6xl'>Keen<span className='font-medium'>Keeper</span></h1>
-                <p className='text-white opacity-80'>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
+                <p className='text-white text-[14px] sm:text-base opacity-80'>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
                 <div className='space-y-3'>
                     <p className='font-semibold text-white text-xl'>Social Links</p>
                     <div className='flex justify-center items-center gap-2'>
