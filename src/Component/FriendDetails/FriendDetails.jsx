@@ -1,16 +1,19 @@
 import { Archive, BellOff, MessageSquareMore, PhoneCall, ShoppingBasket, Trash2, Video } from 'lucide-react';
-import React, { use } from 'react';
+import React, { use, useContext } from 'react';
 import { useLoaderData, useLocation } from 'react-router';
+import { AllAction } from '../../../public/Context/Context';
+import { toast, ToastContainer } from 'react-toastify';
 
 const FriendDetails = () => {
     const { friends } = useLoaderData()
     const AllFriend = use(friends);
+    const {actions, setActions} = useContext(AllAction)
     const location = useLocation()
     const { id } = location.state || {}
 
     const friend = AllFriend.find(friend => friend.id == id)
 
-    const printDate = (dateStr) => {
+    const currentDate = (dateStr) => {
         const date = new Date(dateStr);
 
         return date.toLocaleDateString("en-US", {
@@ -18,6 +21,41 @@ const FriendDetails = () => {
             day: "numeric",
             year: "numeric"
         })
+    }
+
+    const showToast = (text) => {
+        if (text == "text") {
+            toast.success("A text contact add successfully");
+        }
+        else if(text == "call") {
+            toast.success("A call contact add successfully")
+        }
+        else if(text == "video") {
+            toast.success("A video contact add successfully")
+        }
+    }
+
+    const saveAction = (whichOne, name) => {
+        showToast(whichOne)
+
+        const now = new Date();
+        const date = now.toLocaleDateString("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric"
+        })
+        const time = {
+            hours: now.getHours(),
+            minute: now.getMinutes(),
+            second: now.getSeconds(),
+        }
+
+        setActions([...actions, {
+            name,
+            whichOne,
+            date,
+            time
+        }])
     }
 
     return (
@@ -43,7 +81,6 @@ const FriendDetails = () => {
                         <div className='rounded-md flex justify-center items-center font-medium cursor-pointer gap-2 py-3.5 w-full shadow-sm'><Archive strokeWidth={2.75} size={18} /> Archive</div>
                         <div className='rounded-md flex justify-center items-center font-medium cursor-pointer gap-2 py-3.5 w-full shadow-sm text-red-500'><Trash2 strokeWidth={2.75} size={18} /> Delete</div>
                     </div>
-
                 </div>
                 <div className='md:col-span-2 space-y-7 h-full flex flex-col justify-between'>
                     <div className='flex flex-1 gap-5'>
@@ -56,7 +93,7 @@ const FriendDetails = () => {
                             <p className='text-[#64748b]  text-[13px] sm:text-base'>Goals (Days)</p>
                         </div>
                         <div className='flex-1 flex flex-col justify-center items-center rounded-lg text-center py-6 px-2 shadow-[0px_0px_8px_5px_rgba(244,244,244,1)]'>
-                            <h3 className='text-xl sm:text-2xl lg:text-3xl font-semibold text-[#244d3f] mb-1'>{printDate(friend.next_due_date)}</h3>
+                            <h3 className='text-xl sm:text-2xl lg:text-3xl font-semibold text-[#244d3f] mb-1'>{currentDate(friend.next_due_date)}</h3>
                             <p className='text-[#64748b]  text-[13px] sm:text-base'>Next Due</p>
                         </div>
 
@@ -71,15 +108,15 @@ const FriendDetails = () => {
                     <div className='w-full flex-1 space-y-3 rounded-lg p-6 shadow-[0px_0px_8px_5px_rgba(244,244,244,1)]'>
                         <h4 className='text-[#244d3f] font-medium text-xl'>Quick Check-In</h4>
                         <div className='w-full flex gap-3'>
-                            <div className='bg-[#f8fafc] flex-1 cursor-pointer gap-1 text-[15px] text-[#1f2937] border border-[#e9e9e9] rounded-lg py-5 px-2 flex flex-col justify-center items-center'>
+                            <div onClick={() => saveAction("call", friend.name)} className='bg-[#f8fafc] flex-1 cursor-pointer gap-1 text-[15px] text-[#1f2937] border border-[#e9e9e9] rounded-lg py-5 px-2 flex flex-col justify-center items-center'>
                                 <PhoneCall strokeWidth={2.5} />
                                 Call
                             </div>
-                            <div className='bg-[#f8fafc] flex-1 cursor-pointer gap-1 text-[15px] text-[#1f2937] border border-[#e9e9e9] rounded-lg py-5 px-2 flex flex-col justify-center items-center'>
+                            <div onClick={() => saveAction("text", friend.name)} className='bg-[#f8fafc] flex-1 cursor-pointer gap-1 text-[15px] text-[#1f2937] border border-[#e9e9e9] rounded-lg py-5 px-2 flex flex-col justify-center items-center'>
                                 <MessageSquareMore strokeWidth={2.5} />
                                 Text
                             </div>
-                            <div className='bg-[#f8fafc] flex-1 cursor-pointer gap-1 text-[15px] text-[#1f2937] border border-[#e9e9e9] rounded-lg py-5 px-2 flex flex-col justify-center items-center'>
+                            <div onClick={() => saveAction("video", friend.name)} className='bg-[#f8fafc] flex-1 cursor-pointer gap-1 text-[15px] text-[#1f2937] border border-[#e9e9e9] rounded-lg py-5 px-2 flex flex-col justify-center items-center'>
                                 <Video strokeWidth={2.5} />
                                 Video
                             </div>
@@ -87,6 +124,8 @@ const FriendDetails = () => {
                     </div>
                 </div>
             </div>
+            
+            <ToastContainer position="bottom-right"></ToastContainer>
         </div>
     );
 };
