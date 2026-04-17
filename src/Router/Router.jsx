@@ -5,6 +5,7 @@ import Homepage from "../Pages/Homepage/Homepage";
 import Timeline from "../Pages/Timeline/Timeline";
 import FriendDetails from "../Component/FriendDetails/FriendDetails";
 import Status from "../Pages/Status/Status";
+import ErrorFallback from "../Pages/Errorpage/Errorpage";
 
 export const router = createBrowserRouter([
   {
@@ -21,7 +22,12 @@ export const router = createBrowserRouter([
       { path: 'friend/:friendName', 
         loader: () => ({friends: fetch("/FriendData/FriendData.json").then(res => res.json())}),
         Component: FriendDetails 
-      }
-    ]
+      },
+    ],
+    errorElement: <ErrorFallback></ErrorFallback>
+  },
+  {
+    path: '*',
+    Component: ErrorFallback
   }
 ])
