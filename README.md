@@ -1,4 +1,4 @@
-# 📊 Friendship Tracker Platform
+# KeenKeeper
 
 ## 📋 Project Description
 
